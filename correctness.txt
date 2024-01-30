@@ -1,0 +1,37 @@
+Argue the correctness of Selection Sort using a loop invariant:
+Example:
+ selection_sort(A)
+    for j=1 to n-1:
+        min=j
+        for i=j+1 to n:
+            if A[i]<A[min]:
+                min=i
+        swap(j,min)
+
+Assume Loop Invariant:
+At the start of each iteration (for index j), the algorithm correctly selects the minimum in the unsorted part and swaps it with the element at index j. After the jth iteration, the array is sorted up to index j.
+
+Initialization:
+Consider the array A=[4,2,7,1].
+Before the first iteration (j=1), the loop invariant holds as the smallest element in the unsorted part (2,7,1) is swapped with the first element.
+After swap: A=[1,2,7,4]
+
+Maintenance:
+Assume that after j iterations, the loop invariant holds.
+In the (j+1)th iteration, the algorithm again correctly selects the minimum in the remaining unsorted part (7,4) and swaps it with the (j+1)th element.
+After swap: A=[1,2,4,7]
+
+Termination:
+After the last iteration (j=n−1), the entire array is sorted. The loop invariant ensures that at the end of each iteration, the smallest remaining element in the unsorted part is correctly placed.
+
+This proof, including the loop invariant, initialization, maintenance, and termination, demonstrates that the Selection Sort algorithm correctly sorts the array by iteratively selecting and placing the smallest element.
+
+
+
+
+
+
+
+
+
+
